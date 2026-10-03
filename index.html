@@ -115,7 +115,7 @@ function metaHTML(p){return "<span>"+p.date+"</span><span>·</span><span>"+p.tag
 function tagChips(p){return p.tags.map(function(t){return "<a class='tag' href='#/tag/"+t+"'>"+t+"</a>"}).join("")}
 function render(){
   var raw=location.hash.slice(1)||"/";
-  var h=raw.replace(/\/+/g,"")||"/";
+  var h=raw.replace(/\/+$/,"")||"/";
   document.querySelectorAll("#nav a").forEach(function(a){
     a.classList.toggle("on",a.dataset.r===h);
   });
