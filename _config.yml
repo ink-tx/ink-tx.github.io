@@ -1,0 +1,29 @@
+title: 墨水日志
+description: ink-tx 的课程作业与学习记录。把每一次练习，写成自己的答案。
+url: https://ink-tx.github.io
+baseurl: ""
+lang: zh-CN
+timezone: Asia/Taipei
+author: ink-tx
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+permalink: /assignments/:title/
+future: false
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      course: 课程作业
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - templates
+  - work-backup

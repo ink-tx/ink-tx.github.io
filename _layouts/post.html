@@ -1,0 +1,11 @@
+---
+layout: default
+---
+<div class="reading-progress" aria-hidden="true"><span id="reading-progress"></span></div>
+<article class="container post-page">
+  <nav class="breadcrumb" aria-label="当前位置"><a href="{{ '/' | relative_url }}">作业本</a><span aria-hidden="true">/</span><a href="{{ '/courses/' | relative_url }}?course={{ page.course | url_encode }}">{{ page.course | escape }}</a><span aria-hidden="true">/</span><span>正文</span></nav>
+  <header class="post-header"><p class="eyebrow"><span class="small-square" aria-hidden="true"></span>{{ page.course | escape }} <span class="meta-divider">/</span> 课程作业</p><h1>{{ page.title | escape }}</h1>{% if page.summary %}<p class="post-summary">{{ page.summary | escape }}</p>{% endif %}<div class="post-meta"><span class="author-dot">墨</span><span>{{ site.author }}</span><span class="dot-separator">·</span><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y.%m.%d' }}</time><span class="dot-separator">·</span><span>{{ content | strip_html | size | divided_by: 400 | floor | plus: 1 }} 分钟阅读</span></div><div class="post-toolbar"><div class="tag-list">{% for tag in page.tags %}<span># {{ tag | escape }}</span>{% endfor %}</div><div class="post-tools"><button class="text-button" type="button" data-copy-link>复制作业链接 ↗</button><button class="text-button" type="button" data-print>打印 / PDF</button></div></div></header>
+  <div class="reading-grid"><div class="prose post-body" id="post-content">{{ content }}</div><aside class="toc-panel" aria-label="文章目录"><details open><summary><span>本篇目录</span><span aria-hidden="true">⌄</span></summary><nav id="toc" aria-label="正文各章节"></nav></details><p>循着思路，慢慢读。</p><a class="back-top" href="#main">回到顶部 ↑</a></aside></div>
+  <footer class="post-ending"><span class="ending-mark" aria-hidden="true">✳</span><p>这一篇，先记到这里。</p><div><a href="{{ '/' | relative_url }}">← 返回作业本</a><a href="https://github.com/ink-tx/ink-tx.github.io/blob/main/{{ page.path }}">在 GitHub 查看原文 ↗</a></div></footer>
+  <nav class="post-navigation" aria-label="相邻作业">{% if page.previous %}<a href="{{ page.previous.url | relative_url }}"><span>← 较早一篇</span>{{ page.previous.title | escape }}</a>{% endif %}{% if page.next %}<a href="{{ page.next.url | relative_url }}"><span>较新一篇 →</span>{{ page.next.title | escape }}</a>{% endif %}</nav>
+</article>

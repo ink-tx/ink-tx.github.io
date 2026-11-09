@@ -1,0 +1,11 @@
+---
+layout: default
+title: 归档
+section: archive
+permalink: /archive/
+---
+<div class="container inner-page narrow">
+  <div class="page-heading"><p class="eyebrow">THE TIMELINE</p><h1>走过的每一步。</h1><p>共 {{ site.posts.size }} 篇作业，每一次记录都算数。</p></div>
+  {% assign years = site.posts | group_by_exp: 'post', "post.date | date: '%Y'" %}{% for year in years %}<section class="archive-year"><h2>{{ year.name }}<span>{{ year.size }} 篇</span></h2><ol class="archive-list">{% for post in year.items %}<li><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: '%m.%d' }}</time><div><span>{{ post.course | escape }}</span><h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3></div><span class="archive-arrow" aria-hidden="true">↗</span></li>{% endfor %}</ol></section>{% endfor %}
+  <p class="archive-ending">故事从这里开始，下一篇还在路上。</p>
+</div>

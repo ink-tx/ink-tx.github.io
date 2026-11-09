@@ -1,0 +1,41 @@
+---
+layout: default
+title: 写作台
+section: write
+permalink: /write/
+---
+<div class="container inner-page">
+  <div class="page-heading"><p class="eyebrow">THE NEXT PAGE</p><h1>写下这一次的发现。</h1><p>整理作业，保存草稿，然后发布。草稿保存在当前浏览器，公开发布需在 GitHub 确认提交。</p></div>
+  <div class="writing-layout">
+    <form id="writing-form" class="writing-form">
+      <div class="form-field"><label for="work-title">作业标题</label><input id="work-title" name="title" required maxlength="120" placeholder="例如：QQ 流量分析实验报告" autocomplete="off"></div>
+      <div class="form-grid"><div class="form-field"><label for="work-course">课程名称</label><input id="work-course" name="course" required maxlength="60" placeholder="例如：计算机网络" autocomplete="off"></div><div class="form-field"><label for="work-date">发布日期</label><input id="work-date" name="date" type="date" required><p class="field-hint">未来日期的作业会暂时隐藏，请到当天再提交发布。</p></div></div>
+      <div class="form-grid"><div class="form-field"><label for="work-slug">链接标识</label><input id="work-slug" name="slug" required maxlength="80" pattern="[a-z0-9]+(?:-[a-z0-9]+)*" placeholder="qq-traffic-analysis" autocomplete="off"><p class="field-hint">小写字母、数字和短横线；每篇作业使用不同标识。</p></div><div class="form-field"><label for="work-tags">标签</label><input id="work-tags" name="tags" maxlength="200" placeholder="Wireshark, TCP, UDP" autocomplete="off"><p class="field-hint">用逗号分隔，方便以后搜索。</p></div></div>
+      <div class="form-field"><label for="work-summary">作业摘要</label><textarea id="work-summary" name="summary" rows="2" maxlength="500" placeholder="用一两句话说明这篇作业做了什么、发现了什么。"></textarea></div>
+      <div class="form-field"><label for="work-body">正文 · Markdown</label><textarea id="work-body" name="body" rows="19" required spellcheck="false">## 一、作业目标
+
+这次作业需要解决什么问题？
+
+## 二、环境与方法
+
+记录使用的工具、实验环境与操作步骤。
+
+## 三、过程与结果
+
+整理观察、数据和关键截图。
+
+## 四、思考与总结
+
+我学到了什么？有哪些局限与待解决的问题？
+
+## 参考资料
+
+- [资料名称](https://example.com)
+</textarea><p class="field-hint">支持标题、表格、代码块和图片。图片可先上传到仓库 assets/images/，再用 ![图片说明](/assets/images/文件名.png) 引用。</p></div>
+      <p id="draft-status" class="draft-status" role="status" aria-live="polite">草稿只保存在当前浏览器，尚未公开。</p>
+      <div class="form-actions"><button type="submit" class="button button-primary">在 GitHub 发布 <span aria-hidden="true">↗</span></button><button type="button" class="button" id="download-markdown">下载 Markdown <span aria-hidden="true">↓</span></button></div>
+      <p id="publish-status" class="field-hint" role="status" aria-live="polite">点击发布会打开 GitHub 文件编辑页；在该页面提交更改后，作业才会公开。</p>
+    </form>
+    <aside class="writing-guide"><h2>三步，交出下一份作业。</h2><ol><li><strong>整理这一次的思考</strong>填好标题、课程和正文。暂时离开页面，草稿也会在这里等你。</li><li><strong>在 GitHub 确认发布</strong>使用拥有仓库写入权限的账号，检查内容后点击 Commit changes。也可以下载 Markdown，再上传到 _posts 文件夹。</li><li><strong>复制链接，提交给老师</strong>等待页面更新，打开新作业，点击「复制作业链接」，把链接粘贴到课程提交入口。</li></ol><div class="guide-note">长篇作业建议先下载备份，再上传到仓库的 _posts 文件夹。提交后会自动生成课程分类、归档和文章目录。</div><a class="text-link" href="https://github.com/ink-tx/ink-tx.github.io/tree/main/_posts">查看已发布的 Markdown <span aria-hidden="true">↗</span></a></aside>
+  </div>
+</div>

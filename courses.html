@@ -1,0 +1,12 @@
+---
+layout: default
+title: 课程
+section: courses
+permalink: /courses/
+---
+<div class="container inner-page">
+  <div class="page-heading"><p class="eyebrow">THE SUBJECTS</p><h1>按课程，整理思路。</h1><p>把同一门课的练习，串成一条学习的线索。</p></div>
+  {% assign course_groups = site.posts | group_by: 'course' %}
+  <div class="course-grid">{% for group in course_groups %}<a class="course-card" href="#course-{{ forloop.index }}"><span class="course-number">{{ forloop.index | prepend: '0' | slice: -2, 2 }}</span><span class="course-icon" aria-hidden="true">⌘</span><h2>{{ group.name | escape }}</h2><p>{{ group.size }} 篇作业<span aria-hidden="true">↗</span></p></a>{% endfor %}</div>
+  {% for group in course_groups %}<section class="course-section" id="course-{{ forloop.index }}" data-course-section="{{ group.name | escape }}"><div class="section-heading"><h2>{{ group.name | escape }}</h2><span class="subtle">{{ group.size }} 篇作业</span></div><div class="course-assignments">{% for post in group.items %}{% include card.html %}{% endfor %}</div></section>{% endfor %}
+</div>
