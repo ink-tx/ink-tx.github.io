@@ -17,7 +17,7 @@ defaults:
       type: posts
     values:
       layout: post
-      course: 课程作业
+      course: 信息安全
 plugins:
   - jekyll-feed
   - jekyll-sitemap

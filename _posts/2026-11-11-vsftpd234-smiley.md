@@ -1,7 +1,7 @@
 ---
 title: "vsftpd 2.3.4「笑脸后门」全解：一行 :) 换一个 root shell"
 date: 2026-11-11 22:41:52 +0800
-course: 网络安全
+course: 信息安全
 kind: 技术博客
 tags: [vsftpd, CVE-2011-2523, 供应链安全, 漏洞复现]
 summary: 梳理 vsftpd 2.3.4 笑脸后门的事件背景与源码逻辑，记录 PoC 设计、Windows 行为复刻验证及检测防御思路。

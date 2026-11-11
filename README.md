@@ -16,7 +16,7 @@
 ---
 title: "QQ 流量分析实验报告"
 date: 2026-11-09
-course: "计算机网络"
+course: "信息安全"
 kind: "实验报告"
 tags: ["Wireshark", "TCP", "UDP"]
 summary: "一句话介绍这份作业的目标和发现。"

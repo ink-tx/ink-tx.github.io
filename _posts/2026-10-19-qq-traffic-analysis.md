@@ -1,7 +1,7 @@
 ---
 title: 'QQ 流量分析：消息是加密的，文件却在“裸奔”'
 date: 2026-10-19
-course: 计算机网络
+course: 信息安全
 kind: 实验报告
 tags: [Wireshark, TCP/UDP, 网络协议]
 summary: 通过 PC 与手机之间的 QQ 流量，观察登录、聊天、在线与离线文件的传输方式，并记录文件恢复的过程与结果。
